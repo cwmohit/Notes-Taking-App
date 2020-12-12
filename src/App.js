@@ -1,11 +1,19 @@
 import React from "react";
-import "./styles.css";
+import { Route, Switch } from "react-router-dom";
+import Start from "./Start";
+import Home from "./Home";
+import Error from "./Error";
 
-export default function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/Start" component={Start} />
+        <Route component={Error} />
+      </Switch>
+    </>
   );
-}
+};
+
+export default App;
